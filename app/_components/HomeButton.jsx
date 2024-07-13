@@ -6,7 +6,7 @@ export default function HomeButton() {
   const router = useRouter();
 
   function redirectToHome(){
-    router.push('/')
+    router.push('/login')
   }
 
   return (

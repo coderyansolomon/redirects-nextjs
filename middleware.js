@@ -1,12 +1,14 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
-  const isAuthenticated = true; 
+  const isAuthenticated = false; 
 
-  // If the user 4is authenticated, continue as normal
+  // If the user is authenticated, continue as normal
   if (isAuthenticated) {
     return NextResponse.next();
   }
+
+  console.log(request.url)
 
   // Redirect to login page if not authenticated
   return NextResponse.redirect(new URL('/login', request.url));
